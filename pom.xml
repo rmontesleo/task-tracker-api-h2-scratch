@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.demo</groupId>
-	<artifactId>task-tracker-api-h2</artifactId>
+	<artifactId>task-tracker-api-h2-scratch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
