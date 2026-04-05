@@ -10,3 +10,5 @@
 | Add NetworkPolicy and stronger K8s security context | Part of deeper Kubernetes maturity | Project 3 |
 | Add multi-cloud with DigitalOcean | Too wide for the first project | Project 3+ |
 | Add advanced DevSecOps controls | Better after baseline delivery is proven | Project 3+ |
+| Improve GlobalExceptionHanlder methods to reuse method | | |
+

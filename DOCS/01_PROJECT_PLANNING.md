@@ -35,7 +35,7 @@
 |---|---|---|---|
 | 2026-03-30 | Leopoldo | STARTED | Initial project planning document created |
 | 2026-03-31 | Leopoldo | DONE | Reviwew and approved planning and Breadk down  |
-|  |  |  |  |
+| 2026-04-01 | Leoopoldo | STARTED  | Working with EPIC 1 API Baseline   |
 |  |  |  |  |
 
 

@@ -2,16 +2,14 @@
 
 ## Spring
 
-### Restful
 - [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service)
-
-### Response Entity
 - [Using Spring ResponseEntity to Manipulate the HTTP Response](https://www.baeldung.com/spring-response-entity)
 - [ResponseEntity](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/responseentity.html)
-
-### SQL Databases
 - [SQL Databases](https://docs.spring.io/spring-boot/reference/data/sql.html)
-
+- [System Requirements](https://docs.spring.io/spring-boot/system-requirements.html)
+- [SpringDoc OpenAPI Starter WebMVC UI](https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui)
+- [Getting Started OpenAPI 3 & SpringBoot](https://springdoc.org/v1/getting-started.html)
+- [13.2. How can I configure Swagger UI?](https://springdoc.org/index.html#how-can-i-configure-swagger-ui)
 
 ## Frontend
 ### Angular
