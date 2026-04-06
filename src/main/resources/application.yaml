@@ -1,13 +1,40 @@
+# Main SpringBoot application configuration
 spring:
   application:
     name: task-tracker-api-h2
+
+  # DataSource configuration
+  datasource:
+    url: jdbc:h2:mem:taskdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+
+  sql:
+    init:
+      mode: always
+  
+  # H2 Console configuration
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 # Swagger Configuration
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
   api-docs:
-    path: /v3/api-docs  
+    path: /v3/api-docs 
+
+server:
+  port: 8080
 
 # Logging configuration
 logging:
@@ -16,3 +43,4 @@ logging:
     '[com.demo.tasktracker]': DEBUG
     '[org.springframework.web]': INFO
     '[org.hibernate.sql]': DEBUG
+

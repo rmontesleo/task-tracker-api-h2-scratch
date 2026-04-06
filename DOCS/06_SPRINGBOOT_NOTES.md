@@ -26,3 +26,22 @@ http://localhost:8080/swagger-ui/index.html
 http://localhost:8080/v3/api-docs
 
 ```
+
+## 3. Curl operations
+TODO:  Add samples of curl operations
+
+## 4. H2 Console
+
+```bash
+# Open H2 Console
+http://localhost:8080/h2-console
+
+# Verify the configuration in yaml file and configurations
+
+# For dev, check this values in console
+url: jdbc:h2:mem:taskdb
+driver-class-name: org.h2.Driver
+username: sa
+password: ""
+
+```

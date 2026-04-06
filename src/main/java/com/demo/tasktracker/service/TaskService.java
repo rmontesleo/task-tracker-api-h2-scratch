@@ -48,7 +48,7 @@ public class TaskService {
 
     public TaskDTO updateTask(Integer id, UpdateTaskDTO taskDTO){
         Task task =  findTaskById(id);
-        task.setTaskDay(taskDTO.text());
+        task.setTaskText(taskDTO.text());
         task.setTaskDay(taskDTO.day());
         task.setTaskReminder(taskDTO.reminder());
         Task updatedTask = taskRepository.save(task);
