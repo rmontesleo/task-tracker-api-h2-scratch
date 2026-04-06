@@ -11,4 +11,4 @@
 | Add multi-cloud with DigitalOcean | Too wide for the first project | Project 3+ |
 | Add advanced DevSecOps controls | Better after baseline delivery is proven | Project 3+ |
 | Improve GlobalExceptionHanlder methods to reuse method | | |
-
+| Improve notes from ChatGPT notes at the end of the project 1, end all extentions | | |

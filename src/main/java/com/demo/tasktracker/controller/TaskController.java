@@ -7,6 +7,8 @@ import com.demo.tasktracker.dto.TaskDTO;
 import com.demo.tasktracker.dto.UpdateTaskDTO;
 import com.demo.tasktracker.service.TaskService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -36,7 +38,8 @@ public class TaskController {
     }
     
     @PostMapping
-    public ResponseEntity<TaskDTO> postTask(@RequestBody CreateTaskDTO newTaskDTO ) {
+    public ResponseEntity<TaskDTO> postTask(@Valid @RequestBody CreateTaskDTO newTaskDTO ) {
+        logger.debug("Creating a new task with {}", newTaskDTO );
         TaskDTO createdTaskDTO = taskService.createTask(newTaskDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTaskDTO);
     }
@@ -56,7 +59,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TaskDTO> putTask(@PathVariable Integer id, @RequestBody UpdateTaskDTO taskDTO) {
+    public ResponseEntity<TaskDTO> putTask(@Valid @PathVariable Integer id, @RequestBody UpdateTaskDTO taskDTO) {
         TaskDTO updatedTask = taskService.updateTask(id,taskDTO);
         return ResponseEntity.ok(updatedTask);
     }

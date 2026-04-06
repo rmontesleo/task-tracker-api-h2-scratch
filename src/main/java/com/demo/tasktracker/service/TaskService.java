@@ -10,6 +10,7 @@ import com.demo.tasktracker.dto.CreateTaskDTO;
 import com.demo.tasktracker.dto.TaskDTO;
 import com.demo.tasktracker.dto.UpdateTaskDTO;
 import com.demo.tasktracker.entity.Task;
+import com.demo.tasktracker.exception.TaskNotFoundException;
 import com.demo.tasktracker.mapper.TaskMapper;
 import com.demo.tasktracker.repository.TaskRepository;
 
@@ -37,7 +38,7 @@ public class TaskService {
 
     private Task findTaskById(Integer id ){
         return taskRepository.findById(id)
-            .orElseThrow( ()-> new IllegalArgumentException("Task nof found with id: " + id ));
+            .orElseThrow( ()-> new TaskNotFoundException(id) );
     }
 
     public TaskDTO getTaskById(Integer id){

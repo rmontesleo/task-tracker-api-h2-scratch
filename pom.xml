@@ -77,11 +77,17 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- This is required for SpringBoot 4 -->
+		<!-- Swagger : This is required for SpringBoot 4 -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>3.0.2</version>
+		</dependency>
+
+		<!-- For Input Validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
 
