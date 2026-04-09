@@ -45,3 +45,72 @@ username: sa
 password: ""
 
 ```
+
+## 5. Profiles
+```bash
+# Maven wrapper with profile, local, test and prod
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+./mvnw spring-boot:run -Dspring-boot.run.profiles=test
+./mvnw spring-boot:run -Dspring-boot.run.profiles=prod
+
+# Running with the jar file
+# Note: Always verify the current name of your jar to set valo to the environment variable 
+JAR_FILE=target/task-tracker-api-h2-scratch-0.0.1.jar
+
+java -jar $JAR_FILE --spring.profiles.active=local
+java -jar $JAR_FILE --spring.profiles.active=test
+java -jar $JAR_FILE --spring.profiles.active=prod
+
+# To run the prod profile require environment variables, we can define in this way
+
+# Case 1, define the variable who the values will be replace
+export SPRING_PROFILES_ACTIVE=prod
+export DB_URL=jdbc:h2:mem:productiondb
+export DB_USERNAME=dbuser
+export DB_PASSWORD=secret
+export DB_DRIVE=org.h2.Driver
+export SERVER_PORT=9090
+export ROOT_LOG_LEVEL=WARN
+./mvnw spring-boot:run
+
+# Case 2: using spring like style variable to set require values
+export SPRING_PROFILES_ACTIVE=prod
+export SPRING_DATASOURCE_URL=jdbc:h2:mem:productiondb2
+export SPRING_DATASOURCE_USERNAME=superuser
+export SPRING_DATASOURCE_PASSWORD=supesecret
+export SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
+export SERVER_PORT=7070
+export SPRING_LOGGING_LEVEL_ROOT=WARN
+./mvnw spring-boot:run
+
+
+# Case 3: you can override some env variables
+# Running with the jar file
+# Note: Always verify the current name of your jar to set valo to the environment variable 
+JAR_FILE=target/task-tracker-api-h2-scratch-0.0.1.jar
+
+# Define your env variables are sett
+export SPRING_PROFILES_ACTIVE=prod
+export DB_URL=jdbc:h2:mem:productiondb
+export DB_USERNAME=dbuser
+export DB_PASSWORD=secret
+export DB_DRIVE=org.h2.Driver
+export SERVER_PORT=9090
+export ROOT_LOG_LEVEL=WARN
+
+# !IMPORTANT: When running the jar, verify you have the last version.  Check with
+mvn clean package 
+
+#or
+./mvnw clean package
+
+# Execute the jar, overriding the port and the logging level
+java -jar $JAR_FILE \
+--server.port=8585 \
+--logging.level.com.demo.tasktracker=DEBUG
+
+
+
+
+```
+
