@@ -109,8 +109,14 @@ java -jar $JAR_FILE \
 --server.port=8585 \
 --logging.level.com.demo.tasktracker=DEBUG
 
-
-
-
 ```
 
+## 6. Testing
+
+```bash
+# Execute all test
+./mvnw test
+
+# Execute the test from class HttpRequestTest
+./mvnw -Dtest=HttpRequestTest test
+```
