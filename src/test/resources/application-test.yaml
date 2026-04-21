@@ -10,6 +10,11 @@ spring:
       ddl-auto: create-drop
     open-in-view: false
 
+  sql:
+    init:
+      # <-- Add this to prevent schema.sql/data.sql execution
+      mode: never  
+
 logging:
   level:
     root: WARN

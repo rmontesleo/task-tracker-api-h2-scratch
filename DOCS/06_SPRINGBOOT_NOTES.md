@@ -120,3 +120,26 @@ java -jar $JAR_FILE \
 # Execute the test from class HttpRequestTest
 ./mvnw -Dtest=HttpRequestTest test
 ```
+
+```bash
+# to run all unit tests
+./mvnw test
+
+# full verification lifecycle
+./mvnw verify
+
+# Run one test class
+./mvnw -Dtest=TaskServiceTest test
+
+# Run one specific test method
+./mvnw -Dtest=TaskServiceTest#getAllTasks_shouldReturnDtoList test
+
+# Run with test profile
+./mvnw test -Dspring.profiles.active=test
+
+# Clean ant test
+./mvnw clean test
+
+
+
+```
