@@ -121,6 +121,7 @@ public class TaskControllerTest {
         mockMvc.perform(delete("/api/tasks/{id}", 1))
                 .andExpect(status().isNoContent());
         
+        // Verify deleteTask was called exactly 1 time with argument 1
         Mockito.verify(taskService, Mockito.times(1)).deleteTask(1);
     }
 
