@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: task-tracker-api-h2:local
+    container_name: task-tracker-api-h2
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-local}
+      JAVA_OPTS: ${JAVA_OPTS:-}
+      SERVER_PORT: ${SERVER_PORT:-8080}
+      DB_URL: ${DB_URL:-jdbc:h2:mem:taskdb}
+      DB_USERNAME: ${DB_USERNAME:-sa}
+      DB_PASSWORD: ${DB_PASSWORD:-}
+      DB_DRIVER: ${DB_DRIVER:-org.h2.Driver}
+    restart: unless-stopped

@@ -68,7 +68,7 @@ export SPRING_PROFILES_ACTIVE=prod
 export DB_URL=jdbc:h2:mem:productiondb
 export DB_USERNAME=dbuser
 export DB_PASSWORD=secret
-export DB_DRIVE=org.h2.Driver
+export DB_DRIVER=org.h2.Driver
 export SERVER_PORT=9090
 export ROOT_LOG_LEVEL=WARN
 ./mvnw spring-boot:run
@@ -94,7 +94,7 @@ export SPRING_PROFILES_ACTIVE=prod
 export DB_URL=jdbc:h2:mem:productiondb
 export DB_USERNAME=dbuser
 export DB_PASSWORD=secret
-export DB_DRIVE=org.h2.Driver
+export DB_DRIVER=org.h2.Driver
 export SERVER_PORT=9090
 export ROOT_LOG_LEVEL=WARN
 

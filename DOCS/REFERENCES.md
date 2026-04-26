@@ -11,7 +11,7 @@
 - [Getting Started OpenAPI 3 & SpringBoot](https://springdoc.org/v1/getting-started.html)
 - [13.2. How can I configure Swagger UI?](https://springdoc.org/index.html#how-can-i-configure-swagger-ui)
 - [Testing the Web Layer](https://spring.io/guides/gs/testing-web)
-
+- [How to mock void methods with Mockito](https://stackoverflow.com/questions/2276271/how-to-mock-void-methods-with-mockito)
 
 ## Frontend
 ### Angular

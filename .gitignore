@@ -39,5 +39,5 @@ build/
 .env
 **/.env
 
-.env-dev
-**/.env-dev
+.env.*
+**/.env.*
