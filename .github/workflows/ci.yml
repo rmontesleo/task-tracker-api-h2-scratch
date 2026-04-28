@@ -33,11 +33,9 @@ jobs:
       - name: Run test
         run: ./mvnw -B test
 
-      - name: Build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: false
-          tags: task-tacker-api-h2:ci
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Test local job
+        run: |
+          ls -la
+
+      #- name: Build Docker image
+      #  run: DOCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:ci .
