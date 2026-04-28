@@ -70,12 +70,17 @@ docker compose --env-file .env.prod up --build -d
 # end the compose
 docker compose down
 
+# build docker image with buildkit
+DOCKER_BUILDKIT=1 docker build -t task-tracker-api-h2:local
 
 
-# upload container image to docker hub
+# Tag docker image
 version=<DEFINE_A_VERSION_FOR_THIS_IMAGE>
 echo $version
 
+docker tag task-tracker-api-h2:local rmontesleo/task-tracker-api-h2:$version 
+
 #docker push
+docker push rmontesleo/task-tracker-api-h2:$version
 
 ```

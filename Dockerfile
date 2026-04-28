@@ -8,11 +8,13 @@ COPY mvnw pom.xml ./
 RUN chmod +x mvnw
 
 # Download dependencies first
-RUN ./mvnw dependency:go-offline -B
+RUN --mount=type=cache,target=/root/.m2,id=maven \
+    ./mvnw dependency:go-offline -B
 
 # Copy source code and build
 COPY src ./src
-RUN ./mvnw -B clean package -DskipTests
+RUN --mount=type=cache,target=/root/.m2,id=maven \
+    ./mvnw -B clean package -DskipTests
 
 
 # --- Stage 2: Runtime image ---
