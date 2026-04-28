@@ -2,6 +2,9 @@ name: Basic CI
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main  
 
 jobs:
   buiild-test-docker:
@@ -26,5 +29,5 @@ jobs:
 
       - name: Build Docker image
         run: |
-          OCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
+          DOCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
           docker images
