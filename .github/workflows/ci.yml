@@ -2,6 +2,9 @@ name: Basic CI
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main  
 
 jobs:
   buiild-test-docker:
@@ -17,7 +20,7 @@ jobs:
           distribution: temurin
           java-version: '25'
           cache: maven
-     
+
       - name: Compile Project
         run: ./mvnw -B clean compile
 
@@ -25,4 +28,6 @@ jobs:
         run: ./mvnw -B test
 
       - name: Build Docker image
-        run: docker build -t task-tacker-api-h2:ci .
+        run: |
+          DOCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
+          docker images
