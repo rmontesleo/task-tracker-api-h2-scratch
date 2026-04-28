@@ -34,4 +34,4 @@ jobs:
         run: ./mvnw -B test
 
       - name: Build Docker image
-        run: docker build -t task-tacker-api-h2:ci .
+        run: DOCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:ci .
