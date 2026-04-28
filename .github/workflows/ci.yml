@@ -16,16 +16,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '25'
-
-      - name: Cache Maven local repository
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.m2/repository
-            ~/.m2/wrapper
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          cache: maven
 
       - name: Compile Project
         run: ./mvnw -B clean compile
@@ -33,11 +24,7 @@ jobs:
       - name: Run test
         run: ./mvnw -B test
 
-      - name: Test local job
-        run: |
-          ls -la
-
       - name: Build Docker image
         run: |
-          docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
+          OCKER_BUILDKIT=1 docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
           docker images
