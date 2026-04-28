@@ -14,3 +14,4 @@
 | Improve notes from ChatGPT notes at the end of the project 1, end all extentions | | |
 | Improve Swagger documentation |||
 | Add and improve logging on Testing |||
+| Improve the CI, fix the cache for Docker build image during CI |||
