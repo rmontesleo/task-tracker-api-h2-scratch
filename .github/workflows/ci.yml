@@ -38,4 +38,6 @@ jobs:
           ls -la
 
       - name: Build Docker image
-        run: docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
+        run: |
+          docker build -t task-tacker-api-h2:${{ github.run_number }}-${{ github.sha }} .
+          docker images
